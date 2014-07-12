@@ -18,3 +18,4 @@ function! Tab_Or_Complete()
 endfunction
 :inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 :autocmd FileType make set noexpandtab " Don't expand tabs in Makefiles
+:imap hh <Esc>

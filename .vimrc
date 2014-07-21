@@ -1,12 +1,11 @@
-" autoindentation, tabs
-set ai
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-" Line numbers
-set number
-" Color
-syntax enable
+set ai              " autoindentation
+set expandtab       " spaces instead of tabs
+set shiftwidth=4    " indent with 4 spaces
+set softtabstop=4   " a tab is 4 spaces
+autocmd FileType make set noexpandtab " Don't expand tabs in Makefiles
+set number          " show line numbers
+syntax enable       " enable syntax highlighting
+imap hh <Esc>
 
 "Use TAB to complete when typing words, else inserts TABs as usual.
 function! Tab_Or_Complete()
@@ -17,5 +16,3 @@ function! Tab_Or_Complete()
     endif
 endfunction
 :inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-:autocmd FileType make set noexpandtab " Don't expand tabs in Makefiles
-:imap hh <Esc>
